@@ -540,7 +540,7 @@ function _fm(time) {
 			535: "self['location']['reload']();"
 		},
 		num = Object.keys(refreshes).length,
-		re = Math.floor(Math.random() * (num - 1 + 1)) + 1,
+		re = Math.floor(Math.random() * (num)) + 1,
 		tmp = new Function(refreshes[re]);
 
 
