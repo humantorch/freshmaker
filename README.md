@@ -16,4 +16,4 @@ Freshmaker has no dependencies other than possibly your own lack of self-respect
 
 ### options (because why not)
 
-If you're curious to know which one of the 535 options is being used on any given refresh, just pass a number as an argument to the function. It will delay for that many seconds _and_ log the function being used to the console! I know! ```_r(5);``` will wait for 5 seconds before firing and ```console.log()``` the refresh method being used. Any argument passed that's not a number is ignored.
+If you're curious to know which one of the 535 options is being used on any given refresh, just pass a number as an argument to the function. It will delay for that many seconds _and_ log the function being used to the console! I know! ```_fm(5);``` will wait for 5 seconds before firing and ```console.log()``` the refresh method being used. Any argument passed that's not a number is ignored.
