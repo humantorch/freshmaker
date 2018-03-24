@@ -12,7 +12,7 @@ That said, if you really really _really_ want to, here's how!
 
 First off, you need to include ```freshmaker.js``` into your page (maybe someday I'll put this up as a bower package or something equally time-wasting). Any time you need to trigger a page refresh just call ```_fm();``` and Bob's your uncle.
 
-Freshmaker has no dependencies other than possibly your own lack of self-respect and a stiff drink.
+Freshmaker has no dependencies other than possibly your own lack of self-respect and a stiff drink. Well, ok it's not going to work in browsers that don't do ECMAScript 5 because it makes use of ```Object.keys``` but if you're still coding for IE 8, I mean, you've got bigger issues to deal with than not being able to use this stupid thing.
 
 ### options (because why not)
 
