@@ -539,8 +539,10 @@ function _fm(time) {
 			534: "self.location['reload']();",
 			535: "self['location']['reload']();"
 		},
-		re = Math.floor(Math.random() * (535 - 1 + 1)) + 1,
+		num = Object.keys(refreshes).length,
+		re = Math.floor(Math.random() * (num - 1 + 1)) + 1,
 		tmp = new Function(refreshes[re]);
+
 
 	if (time && typeof(time) === 'number') {
 		console.log(refreshes[re].toString());
