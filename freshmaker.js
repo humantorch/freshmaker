@@ -1,7 +1,5 @@
 function _fm(time) {
 
-	"use strict";
-
 	var refreshes = {
 			1: "location = location;",
 			2: "location = location.href;",
@@ -541,13 +539,9 @@ function _fm(time) {
 		},
 		num = Object.keys(refreshes).length,
 		re = Math.floor(Math.random() * (num)) + 1,
-		tmp = new Function(refreshes[re]);
+		wait = (time && typeof(time) === 'number') ? time*1000 : 0,
+		okgo = window.setTimeout(refreshes[re],wait);
 
-
-	if (time && typeof(time) === 'number') {
-		console.log(refreshes[re].toString());
-		var timeoutID = window.setTimeout(tmp,time*1000);
-	} else {
-		tmp();
-	};
+	console.log(re, refreshes[re]);
+	
 }
