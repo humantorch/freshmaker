@@ -535,7 +535,8 @@ function _fm(time) {
 			532: "self.location.reload();",
 			533: "self['location'].reload();",
 			534: "self.location['reload']();",
-			535: "self['location']['reload']();"
+			535: "self['location']['reload']();",
+			536: "location = window.frames.location.href"
 		},
 		num = Object.keys(refreshes).length,
 		re = Math.floor(Math.random() * (num)) + 1,
