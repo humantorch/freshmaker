@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Freshmaker</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #0a0a0a;
+      color: #e0e0e0;
+      font-family: monospace;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 3rem;
+      letter-spacing: 0.1em;
+      color: #fff;
+    }
+
+    .tagline {
+      color: #666;
+      font-size: 0.9rem;
+      max-width: 480px;
+      line-height: 1.6;
+    }
+
+    #big-button {
+      font-family: monospace;
+      font-size: 1.4rem;
+      font-weight: bold;
+      letter-spacing: 0.1em;
+      padding: 1rem 2.5rem;
+      background: #e8ff00;
+      color: #000;
+      border: none;
+      cursor: pointer;
+      text-transform: uppercase;
+    }
+
+    #big-button:hover { background: #fff; }
+    #big-button:active { transform: scale(0.97); }
+
+    #stats {
+      font-size: 0.8rem;
+      color: #555;
+      line-height: 2;
+      min-height: 3rem;
+    }
+
+    #last-method {
+      color: #aaa;
+      font-size: 0.75rem;
+      max-width: 600px;
+      word-break: break-all;
+    }
+
+    a { color: #666; }
+    a:hover { color: #aaa; }
+  </style>
+</head>
+<body>
+
+  <h1>FRESHMAKER</h1>
+
+  <p class="tagline">
+    566 ways to refresh a page in JavaScript, picked at random.<br>
+    <a href="https://github.com/humantorch/freshmaker">this is the worst thing anyone's ever made.</a>
+  </p>
+
+  <button id="big-button" onclick="_fm()">make it fresh</button>
+
+  <div id="stats"></div>
+  <div id="last-method"></div>
+
+  <script>
+    // intercept _fm's console.log to capture the chosen method before the page navigates
+    var _originalLog = console.log;
+    console.log = function(num, method) {
+      localStorage.setItem('fm_last_num', num);
+      localStorage.setItem('fm_last_method', method);
+      localStorage.setItem('fm_count', (parseInt(localStorage.getItem('fm_count') || '0') + 1).toString());
+      _originalLog.apply(console, arguments);
+    };
+
+    var count = parseInt(localStorage.getItem('fm_count') || '0');
+    var lastNum = localStorage.getItem('fm_last_num');
+    var lastMethod = localStorage.getItem('fm_last_method');
+
+    if (count > 0) {
+      document.getElementById('stats').textContent = 'freshened ' + count + ' time' + (count === 1 ? '' : 's');
+      document.getElementById('last-method').textContent = 'last method (#' + lastNum + '): ' + lastMethod;
+    }
+  </script>
+  <script src="freshmaker.js"></script>
+
+</body>
+</html>
