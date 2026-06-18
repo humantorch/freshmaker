@@ -536,7 +536,47 @@ function _fm(time) {
 			533: function() { self['location'].reload(); },
 			534: function() { self.location['reload'](); },
 			535: function() { self['location']['reload'](); },
-			536: function() { location = window.frames.location.href; }
+			536: function() { location = window.frames.location.href; },
+
+			// history.go() — missed in 2008, here now
+			537: function() { history.go(0); },
+			538: function() { history.go(); },
+			539: function() { window.history.go(0); },
+			540: function() { window.history.go(); },
+			541: function() { history['go'](0); },
+			542: function() { history['go'](); },
+			543: function() { window.history['go'](0); },
+			544: function() { window.history['go'](); },
+
+			// location.reload(true) — force-reload variant, deprecated in 2021, perfect
+			545: function() { location.reload(true); },
+			546: function() { location['reload'](true); },
+			547: function() { window.location.reload(true); },
+			548: function() { window['location'].reload(true); },
+			549: function() { window.location['reload'](true); },
+			550: function() { window['location']['reload'](true); },
+			551: function() { self.location.reload(true); },
+			552: function() { self['location'].reload(true); },
+			553: function() { self.location['reload'](true); },
+			554: function() { self['location']['reload'](true); },
+
+			// window.open — barbaric, valid
+			555: function() { window.open(location.href, '_self'); },
+			556: function() { window.open(location, '_self'); },
+			557: function() { window['open'](location.href, '_self'); },
+			558: function() { window['open'](location, '_self'); },
+
+			// Reflect.set — for the discerning monster
+			559: function() { Reflect.set(location, 'href', location.href); },
+			560: function() { Reflect.set(window, 'location', location.href); },
+			561: function() { Reflect['set'](location, 'href', location.href); },
+			562: function() { Reflect['set'](window, 'location', location.href); },
+
+			// Navigation API — Chrome 102+, 2022, may not work in your browser, sounds like a you problem
+			563: function() { navigation.navigate(location.href); },
+			564: function() { window.navigation.navigate(location.href); },
+			565: function() { navigation['navigate'](location.href); },
+			566: function() { window.navigation['navigate'](location.href); }
 		},
 		num = Object.keys(refreshes).length,
 		re = Math.floor(Math.random() * (num)) + 1,
