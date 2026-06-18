@@ -6,9 +6,11 @@ In a fit of whiskey-fueled madness I thought (as any sane person would) "Why not
 
 And here we are. To be clear: **this is the worst thing anyone's ever made.** Nobody in their right mind should use this in their project.
 
+**Update, 2026**: In a brief moment of clarity, it was discovered that the original implementation passed JavaScript strings to `window.setTimeout`, which evaluates them as code. This is `eval`. A previous "fix" had switched to `new Function`, which is also `eval`. Both approaches were 3 `eval`s in a trench coat. The 536 strings have since been replaced with actual JavaScript functions, which is the correct way to do this and feels profoundly out of place here.
+
 That said, if you really really _really_ want to, here's how!
 
-<img src="https://media.giphy.com/media/kaq6GnxDlJaBq/giphy.gif" width="100" title="y tho">
+<img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExMXl4M2t2bGUyMzI0cTM3azkzbDB6Z2N2NnBpc2Q3anA5OWhta2pycSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/NRz7qKRkrgIWsQsjba/giphy.gif" width="150" title="y tho">
 
 ## howto.txt
 
