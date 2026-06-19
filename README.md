@@ -8,7 +8,7 @@ In a fit of whiskey-fueled madness I thought (as any sane person would) "Why not
 
 And here we are. To be clear: **this is the worst thing anyone's ever made.** Nobody in their right mind should use this in their project.
 
-That said, if you really really _really_ want to, here's how!
+That said, if you really really _really_ want to, you can [try it out here](https://humantorch.github.io/freshmaker) or here's how to use it yourself!
 
 <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExMXl4M2t2bGUyMzI0cTM3azkzbDB6Z2N2NnBpc2Q3anA5OWhta2pycSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/NRz7qKRkrgIWsQsjba/giphy.gif" width="150" title="y tho">
 
